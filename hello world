@@ -1,0 +1,18 @@
+
+ 1     SECTION .data 
+  2 msg:    db "Hello World",10 
+  3 len:    equ $-msg 
+  4 
+  5     SECTION .text 
+  6 
+  7         global main 
+  8 main: 
+  9     mov edx,len 
+ 10     mov ecx,msg 
+ 11     mov ebx,1 
+ 12     mov eax,4 
+ 13 
+ 14     int 0x80 
+ 15     mov ebx,0 
+ 16     mov eax,1 
+ 17     int 0x80 
